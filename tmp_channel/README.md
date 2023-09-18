@@ -35,7 +35,7 @@ Each time 'send.sh' updates the tmp file's permissions, it adds another hard lin
 * Keep running until and while running send.sh. It will stop automatically once it has read a message and printed it to the terminal.
 
 ### send.sh
-* Run in the same directory as recieve.sh
+* Run in the same directory as recieve.sh.
 * Run in a Linux terminal with the covert message as an argument (e.g., `bash send.sh "This is a secret, shhh"`).
 * If send.sh does not run in full, it will fail to delete the tmp directory and its contents. To do so, run the command `rm -rf tmp`.
 
