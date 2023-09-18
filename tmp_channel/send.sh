@@ -14,10 +14,6 @@ cd tmp
 touch tmp.txt
 echo "This is a test" >> tmp.txt
 
-# Cut down the permissions to just those that are relevant
-raw_perms=$(ls -l tmp.txt)
-perms=$(cut -c 2-10 <<< $raw_perms | cut -c 1,2-9)
-
 # Returns the current count of links the file has
 current_link_count=$(ls -l tmp.txt | cut -c 12)
 
