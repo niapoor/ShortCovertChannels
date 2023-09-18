@@ -1,5 +1,5 @@
 # Tmp Covert Channel
-A short covert channel that utilizes temporary modulations to file permissions and hard link count. Created by Nia Poor.
+A short covert channel that uses temporary modulations to file permissions and hard link count. Created by Nia Poor.
 
 <!-- TABLE OF CONTENTS -->
 <details>
