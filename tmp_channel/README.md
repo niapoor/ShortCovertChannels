@@ -54,7 +54,7 @@ Covert channels are notoriously fragile. Here are some notable limitations of th
 * recieve.sh must already be running when send.sh begins in order to capture the entire message.
 * Both the sender and reciever must run their programs on the same machine in the same directory.
 * An outsider cannot change file permissions or add additional hard links while the file is still running.
-* Can not take in all special characters (e.g. ! and ?). Can take in "." and ",".
+* Can not take in all special characters (e.g., ! and ?). Can take in "." and ",".
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
