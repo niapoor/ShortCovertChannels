@@ -15,9 +15,9 @@ A short covert channel that utilizes temporary modulations to file permissions a
 
 This covert channel takes in a secret message from the user, converting it to binary. Each ASCII character is represented by 8 bits of binary.
 
-To convey the secret, this channel utilizes the permissions of a temporary file. Since a file has 9 bits used for permissions (e.g., rwxrwxrwx), and each ASCII character needs only 8 bits to represent itself, we always ignore the owner's write permissions. This ensures we never face issues when changing the permissions of or deleting the file.
+To convey the secret, this channel uses the permissions of a temporary file. Since a file has 9 bits used for permissions (e.g., rwxrwxrwx), and each ASCII character needs only 8 bits to represent itself, we always ignore the owner's write permissions. This ensures we never face issues when changing the permissions of or deleting the file.
 
-When assigning permissions to represent the covert message, we consider "r/w/x" as a "1" and "-" as a "0". For example, the ASCII character 'a' is represented as `01100001`, and its corresponding permissions would be `-wxr----x` (keeping in mind that the first 'w', representing the owner's write permission, remains unaffected and always true).
+When assigning permissions to represent the covert message, we consider `r/w/x` as a `1` and `-` as a `0`. For example, the ASCII character `a` is represented as `01100001`, and its corresponding permissions would be `-wxr----x` (keeping in mind that the first 'w', representing the owner's write permission, remains unaffected and always true).
 
 Each time 'send.sh' updates the tmp file's permissions, it adds another hard link to the file. This is so 'receive.sh' knows to read the file's permissions again. This ensures 'receive.sh' properly accounts for duplicate characters in a message (e.g., the two 'o's in the word 'pool')."
 
